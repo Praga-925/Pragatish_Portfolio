@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@layer base {
+  /* ==========================================================================
+     Design Tokens: Light & Dark Theme System
+     ========================================================================== */
+
+  :root,
+  :root[data-theme="light"],
+  html:not(.dark) {
+    /* Backgrounds */
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #F1F5F9;
+    --bg-muted: #E2E8F0;
+    --background: #F8FAFC;
+    --foreground: #0F172A;
+
+    /* Surfaces & Cards */
+    --surface-card: #FFFFFF;
+    --surface-elevated: #FFFFFF;
+    --surface-secondary: #F8FAFC;
+    --card: #FFFFFF;
+    --card-foreground: #0F172A;
+
+    /* Borders & Dividers */
+    --border-card: #E2E8F0;
+    --border-ghost: #E2E8F0;
+    --border-subtle: #CBD5E1;
+    --border: #E2E8F0;
+
+    /* Typography */
+    --text-main: #0F172A;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --text-heading: #0F172A;
+
+    /* Accents */
+    --accent-cyan: #0284C7;
+    --accent-cyan-hover: #0369A1;
+    --accent-cyan-subtle: rgba(2, 132, 199, 0.1);
+    --accent-violet: #7C3AED;
+    --accent-blue: #2563EB;
+    --accent-gold: #D97706;
+    --primary: #0284C7;
+    --primary-foreground: #FFFFFF;
+
+    /* Navigation & Glassmorphism */
+    --nav-bg: rgba(255, 255, 255, 0.88);
+    --nav-border: rgba(226, 232, 240, 0.85);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --overlay-bg: rgba(15, 23, 42, 0.45);
+
+    /* Shadows & Glows */
+    --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 16px 36px -4px rgba(2, 132, 199, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+    --glow-cyan: 0 0 35px rgba(2, 132, 199, 0.12);
+    --glow-violet: 0 0 35px rgba(124, 58, 237, 0.12);
+
+    /* Cursor & Indicators */
+    --cursor-dot: #0284C7;
+    --cursor-ring: rgba(2, 132, 199, 0.6);
+    --cursor-halo: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, rgba(2, 132, 199, 0.02) 60%, transparent 100%);
+    --noise-opacity: 0.012;
+
+    /* System */
+    --system-success: #10B981;
+    --system-error: #EF4444;
+
+    color-scheme: light;
+  }
+
+  :root[data-theme="dark"],
+  html.dark {
+    /* Backgrounds */
+    --bg-primary: #090D14;
+    --bg-secondary: #0D1522;
+    --bg-muted: #162032;
+    --background: #090D14;
+    --foreground: #E2E8F0;
+
+    /* Surfaces & Cards */
+    --surface-card: #121B29;
+    --surface-elevated: #1A2638;
+    --surface-secondary: #121B29;
+    --card: #121B29;
+    --card-foreground: #E2E8F0;
+
+    /* Borders & Dividers */
+    --border-card: #1E2D42;
+    --border-ghost: #1E2D42;
+    --border-subtle: #24354D;
+    --border: #1E2D42;
+
+    /* Typography */
+    --text-main: #E2E8F0;
+    --text-primary: #E2E8F0;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --text-heading: #E2E8F0;
+
+    /* Accents */
+    --accent-cyan: #00E5FF;
+    --accent-cyan-hover: #33EBFF;
+    --accent-cyan-subtle: rgba(0, 229, 255, 0.1);
+    --accent-violet: #8B5CF6;
+    --accent-blue: #3B82F6;
+    --accent-gold: #D4AF37;
+    --primary: #00E5FF;
+    --primary-foreground: #090D14;
+
+    /* Navigation & Glassmorphism */
+    --nav-bg: rgba(9, 13, 20, 0.85);
+    --nav-border: rgba(30, 45, 66, 0.8);
+    --glass-bg: rgba(18, 27, 41, 0.75);
+    --glass-border: rgba(30, 45, 66, 0.8);
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+
+    /* Shadows & Glows */
+    --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 16px 48px rgba(0, 229, 255, 0.16), 0 0 24px rgba(0, 229, 255, 0.06);
+    --glow-cyan: 0 0 40px rgba(0, 229, 255, 0.15);
+    --glow-violet: 0 0 40px rgba(139, 92, 246, 0.15);
+
+    /* Cursor & Indicators */
+    --cursor-dot: #00E5FF;
+    --cursor-ring: rgba(0, 229, 255, 0.6);
+    --cursor-halo: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, rgba(0, 229, 255, 0.02) 60%, transparent 100%);
+    --noise-opacity: 0.025;
+
+    /* System */
+    --system-success: #10B981;
+    --system-error: #EF4444;
+
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Accessible Focus Ring */
+  *:focus-visible {
+    outline: 2px solid var(--accent-cyan) !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* ==========================================================================
+   CSS View Transitions API for Expanding Circular Ripple Theme Switch
+   ========================================================================== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 99999;
+}
+
+/* Typography Utility Classes */
+.font-heading {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-subtle);
+}
+
+/* Glassmorphism Guidelines */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(18px) saturate(190%);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  border: 1px solid var(--nav-border);
+}
+
+/* Ambient Edge Lighting & Glows */
+.ambient-glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+.ambient-glow-violet {
+  box-shadow: var(--glow-violet);
+}
+
+.border-wire {
+  border: 1px solid var(--border-card);
+}
+
+.border-wire-hover:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-hover);
+}
+
+/* SVG Noise Overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+/* Reduced Motion Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
