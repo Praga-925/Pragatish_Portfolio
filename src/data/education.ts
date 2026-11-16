@@ -14,9 +14,9 @@ export const EDUCATION_DATA: EducationItem = {
   id: "kongunadu-be-cs",
   degree: "Bachelor of Engineering (B.E.)",
   fieldOfStudy: "Computer Science and Engineering",
-  institution: "Kongunadu College of Engineering and Technology",
+  institution: "Kongunadu College of Engineering and Technology, Trichy",
   location: "Tamil Nadu, India",
-  currentStatus: "Fourth Year • Seventh Semester",
+  currentStatus: "2023 – 2027 • CGPA: 7.3/10",
   expectedGraduation: "2027",
   academicFocus: [
     "Artificial Intelligence",
